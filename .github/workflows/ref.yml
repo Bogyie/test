@@ -10,10 +10,10 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: bitnami/git
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
       - run: |
           git checkout origin/${{ github.head_ref }}
           git config user.name github-actions
