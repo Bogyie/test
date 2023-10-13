@@ -13,7 +13,6 @@ jobs:
     steps:
       - run: |
           git clone https://${{ github.token }}@github.com/${{ github.repository }} .
-          cd repo
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
