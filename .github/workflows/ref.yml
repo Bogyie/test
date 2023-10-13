@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          git clone https://${{ github.token }}@github.com/${{ github.repository }} repo
+          git clone https://${{ github.token }}@github.com/${{ github.repository }} .
           cd repo
       - run: |
           git config user.name github-actions
