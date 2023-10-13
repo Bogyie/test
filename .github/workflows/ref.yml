@@ -16,7 +16,8 @@ jobs:
           repository: ${{ github.repository }}
           ref: ${{ github.head_ref }}
     
-      - run: asdf ||:
+      - run: |
+          asdf ||:
 
       - run: |
           echo "Blah " >> README.md
