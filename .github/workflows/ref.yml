@@ -15,10 +15,13 @@ jobs:
         with:
           repository: ${{ github.repository }}
           ref: ${{ github.head_ref }}
+      
       - run: |
-          git checkout ${{ github.head_ref }}
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git checkout ${{ github.head_ref }}
+      
+      - run: |
           echo "Blah " >> README.md
           git add -A
           git commit --message "Updated files from pre-commit"
