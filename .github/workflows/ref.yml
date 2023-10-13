@@ -11,8 +11,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          git clone https://${{ github.token }}@github.com/${{ github.repository }} .
+      - run: <
+          git clone
+          https://${{ github.repository_owner }}:${{ github.token }}@github.com/${{ github.repository }}
+          -b ${{ github.read_ref }}
+          .
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
