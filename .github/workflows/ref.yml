@@ -13,12 +13,9 @@ jobs:
     container:
       image: bitnami/git
     steps:
-      - run: <
-          git clone
-          https://${{ github.repository_owner }}:${{ github.token }}@github.com/${{ github.repository }}
-          -b ${{ github.head_ref }}
-          .
+      - uses: actions/checkout@v4
       - run: |
+          git checkout origin/${{ github.head_ref }}
           git config user.name github-actions
           git config user.email github-actions@github.com
           echo "Blah " >> README.md
