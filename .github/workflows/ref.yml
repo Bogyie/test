@@ -17,13 +17,9 @@ jobs:
           ref: ${{ github.haed_ref }}
           fetch-depth: '0'
       - run: |
-          echo "${{ github.ref }}"
-          echo "${{ github.head_ref }}"
-          echo "${{ github.base_ref }}"
           git config user.name github-actions
           git config user.email github-actions@github.com
           echo "Blah " >> README.md
           git add -A
           git commit --message "Updated files from pre-commit"
-          git push origin HEAD:${{ github.head_ref }}
-          
+          git push origin
